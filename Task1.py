@@ -21,7 +21,7 @@ def get_weather(city_name):
     response = requests.get(weather_URL)
     inf = json.loads(response.text)
     weather = inf['weather'][0]['main']
-    temp = int(inf['main']['temp']) - 273   #Converting Kelvin to Celcius
+    temp = int(inf['main']['temp']) - 273   # Converting Kelvin to Celcius
     hum = int(inf['main']['humidity'])
     press = int(inf['main']['pressure'])
     return weather, temp, hum, press
